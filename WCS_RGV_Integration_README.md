@@ -1,14 +1,14 @@
 # Warehouse Control System (WCS) -- RGV Integration Layer
 
-## Overview
+![NOTE](https://img.shields.io/badge/PROJECT-SUMMARY-FF6F61?style=for-the-badge)
 
-This project represents an industrial automation integration solution
+> This project represents an industrial automation integration solution
 developed as part of a Warehouse Control System (WCS). The system
 enables real-time communication between a Warehouse Management System
 (WMS) and Rail Guided Vehicles (RGVs) operating within a fully automated
 factory environment.
 
-The primary objective of this solution is to reliably dispatch
+> The primary objective of this solution is to reliably dispatch
 transport-related commands to RGV fleets while ingesting telemetry,
 status updates, and operational reports from physical equipment.
 
@@ -27,20 +27,66 @@ within the WCS layer.
 
 ------------------------------------------------------------------------
 
-### ✅ WMS → RGV Command Dispatcher
+<details open>
+  <summary>
+    <img src="https://img.shields.io/badge/01-WMS%20→%20RGV%20Command%20Dispatcher-00C2FF?style=for-the-badge" alt="Augmented Reality Exploration">
+  </summary>
 
-A .NET-based service responsible for:
+- A .NET-based service responsible for:
 
--   Monitoring shared memory for scheduler-issued instructions\
--   Translating system and scheduler states into executable machine
-    commands\
--   Invoking RGV API endpoints with low-latency guarantees\
--   Ensuring safe and deterministic command execution\
--   Handling transport-related operations, including:
-    -   Transport Request\
-    -   Transport Cancellation\
-    -   Destination Change\
-    -   System Mode Change
+  - Monitoring shared memory for scheduler-issued instructions
+  - Translating system and scheduler states into executable machine commands
+  - Invoking RGV API endpoints with low-latency guarantees
+  - Ensuring safe and deterministic command execution
+  - Handling transport-related operations, including:
+    - Transport Request
+    - Transport Cancellation
+    - Destination Change
+    - System Mode Change
+
+</details>
+
+<details open>
+  <summary>
+    <img src="https://img.shields.io/badge/02-RGV%20→%20WMS%20Telemetry%20Service-00C2FF?style=for-the-badge" alt="RGV → WMS Telemetry Service">
+  </summary>
+
+- A service layer exposing API endpoints to receive operational feedback from RGV equipment
+
+- Handles incoming machine-generated reports, including:
+
+  - Transport Status Reports
+  - Destination Change Requests
+  - Pass Reports
+  - Equipment Status Reports
+  - Equipment Error Reports
+  - System Error / Alert Reports
+
+</details>
+
+# WCS ↔ RGV Integration Flow
+
+This diagram shows the interaction between **RGV2WMS** and **WMS2RGV** in a Warehouse Control System.
+
+```text
+
+                        Server 1                                                                                        Server 2
+                                                            +-------------------+           REST API Calls       +-----------------------+
+                                                            |                   |<------------------------------>|                       |
+                                                            |      RGV2WMS      |                                |          RGV          |
+                                        --------------------|  Telemetry &      |                                |   which provide api   |  
+                                        |                   |  Status Reports   |------------------------------->|  Transport / Cancel   |
+                                        |                   |                   |          REST API Calls        |  Destination Change   |
+   write sm status           +-------------------+          +-------------------+                                +-----------------------+
+          -------------------|   Shared Memory   |----------------------                                                    ^
+          |                   +------------------+                     |                                                    |
+ +-------------------+                                      +-----------------------+                                       |
+ |                   |                                      |                       |                                       |
+ |                   |                                      |      WMS2RGV          |                                       |
+ |    RGV Shedular   |------------------------------------> |  Command Dispatcher   |---------------------------------------+
+ |                   |                                      |  Transport / Cancel   |
+ |                   |                                      |  Destination Change   |
+ +-------------------+                                      +-----------------------+
 
 ------------------------------------------------------------------------
 
