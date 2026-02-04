@@ -29,7 +29,7 @@ Click any project below to view the detailed documentation.
 
 | Project | Role | Tech Stack | Description |
 |--------|------|------------|--------------|
-| [WMS ↔ RGV Integration System](https://github.com/DoubleDAmarasinghe/Industrial_Automation_Projects/blob/main/industrial-wcs-rgv-integration.md)  | Software Engineer | .NET, REST APIs, Shared Memory | Industrial transport control system enabling machine communication and real-time telemetry. |
+| [WMS ↔ RGV Integration System](https://github.com/DoubleDAmarasinghe/Industrial_Automation_Projects/blob/main/WCS_RGV_Integration_README.md)  | Software Engineer | .NET, REST APIs, Shared Memory | Industrial transport control system enabling machine communication and real-time telemetry. |
 | 🚀 **Warehouse Management Mobile App** | Mobile Developer | .NET MAUI, APIs | Cross-platform mobile solution for warehouse operations and inventory workflows. |
 | 🌌 **Astronomical AR Education App** | AR Engineer | Unity, AR | Interactive augmented reality application for exploring planets and celestial bodies. |
 | 🤿 **Underwater VR Simulation** | VR Engineer | Unity, VR | Educational simulation allowing users to pilot a submersible and scan marine life. |
