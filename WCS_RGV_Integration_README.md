@@ -87,7 +87,7 @@ This diagram shows the interaction between **RGV2WMS** and **WMS2RGV** in a Ware
  |                   |                                      |  Transport / Cancel   |
  |                   |                                      |  Destination Change   |
  +-------------------+                                      +-----------------------+
-
+```
 ### ✅ RGV → WMS Telemetry Service
 
 A service layer exposing API endpoints to receive operational feedback
