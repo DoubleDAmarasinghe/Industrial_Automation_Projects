@@ -43,12 +43,11 @@ A curated selection of systems and applications demonstrating experience in indu
 
 ## 📂 Project Documentation
 
-- 👉 [WMS ↔ RGV Integration System](./projects/wms-rgv.md)  
-- 👉 [Warehouse Mobile Application](./projects/warehouse-mobile.md)  
-- 👉 [Astronomical AR App](./projects/ar-astronomy.md)  
-- 👉 [Underwater VR Simulation](./projects/vr-underwater.md)  
-- 👉 [Rubik's Cube AR Solver](./projects/ar-rubiks.md)  
-- 👉 [Sales Management System](./projects/sales-system.md)
+- 👉 [Warehouse Control System (WCS) – RGV Integration Layer](https://github.com/DoubleDAmarasinghe/Industrial_Automation_Projects/blob/main/WCS_RGV_Integration_README.md)
+- 👉 [AR Product Simulator Application](https://github.com/DoubleDAmarasinghe/Mobile_Application_Development_Showcase/blob/main/ar-ai-based-simulator-showcase-application.md)
+- 👉 [Block AR 3×3×3 Rubik Solver](https://github.com/DoubleDAmarasinghe/Mobile_Application_Development_Showcase/blob/main/block-ar-3x3x3rubik-solver-mobile.md)  
+- 👉 [Stargaze AR Astronomical Learning Application](https://github.com/DoubleDAmarasinghe/Mobile_Application_Development_Showcase/blob/main/stargaze-ar-astronomical-learning-application.md)  
+- 👉 [Volt Launcher Mobile](https://github.com/DoubleDAmarasinghe/Mobile_Application_Development_Showcase/blob/main/volt-launcher-game-management-application.md) 
 
 *(Update paths based on your folder structure.)*
 
