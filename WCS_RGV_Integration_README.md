@@ -70,23 +70,27 @@ This diagram shows the interaction between **RGV2WMS** and **WMS2RGV** in a Ware
 
 ```text
 
-                        Server 1                                                                                        Server 2
-                                                         +-------------------+           REST API Calls       +--------------------+
-                                                         |                   |<------------------------------>|                    |
-                                                         |      RGV2WMS      |                                |          RGV       |
-                                        +----------------|  Telemetry &      |                                |  which provide api |  
-                                        |                |  Status Reports   |------------------------------->| Transport / Cancel |
-                                        |                |                   |          REST API Calls        | Destination Change |
-   write sm status         +------------------+          +-------------------+                                +--------------------+
-          +----------------|   Shared Memory  |---------------------+                                                    ^
-          |                +------------------+                     |                                                    |
- +-------------------+                                      +-----------------------+                                    |
- |                   |                                      |                       |                                    |
- |                   |                                      |      WMS2RGV          |                                    |
- |    RGV Shedular   |------------------------------------> |  Command Dispatcher   |------------------------------------+
- |                   |                                      |  Transport / Cancel   |
- |                   |                                      |  Destination Change   |
- +-------------------+                                      +-----------------------+
+                        Server 1                                                                              Server 2
+                                                  +-------------------+           REST API Calls       +--------------------+
+                                                  |                   |<------------------------------>|                    |
+                                                  |      RGV2WMS      |                                |          RGV       |
+                                    +-------------|  Telemetry &      |                                |  which provide api |  
+                                    |             |  Status Reports   |------------------------------->| Transport / Cancel |
+                                    |             |                   |          REST API Calls        | Destination Change |
+   write sm status         +------------------+   +-------------------+                                +--------------------+
+          +----------------|   Shared Memory  |---------------------+                                          ^
+          |                +------------------+                     |                                          |
+ +-------------------+                            +-----------------------+                                    |
+ |                   |                            |                       |                                    |
+ |                   |                            |      WMS2RGV          |                                    |
+ |    RGV Shedular   |                            |  Command Dispatcher   |------------------------------------+
+ |                   |                            |  Transport / Cancel   |
+ |                   |                            |  Destination Change   |
+ +-------------------+                            +-----------------------+
+
+
+
+
 ```
 ### ✅ RGV → WMS Telemetry Service
 
