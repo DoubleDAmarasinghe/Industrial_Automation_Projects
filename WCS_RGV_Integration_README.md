@@ -1,6 +1,10 @@
-# Warehouse Control System (WCS) -- RGV Integration Layer
+# Warehouse Control System (WCS) - RGV Integration Layer
 
-![NOTE](https://img.shields.io/badge/PROJECT-SUMMARY-FF6F61?style=for-the-badge)
+<img alt="Role Badge" src="https://img.shields.io/badge/ROLE-Software%20Engineer%20%20(Industrial%20Automation)-f22481"> <br>
+![NOTE](https://img.shields.io/badge/PROJECT-INTRODUCTION-00C2FF?style=for-the-badge)
+
+
+
 
 > This project represents an industrial automation integration solution
 developed as part of a Warehouse Control System (WCS). The system
@@ -17,16 +21,7 @@ status updates, and operational reports from physical equipment.
 > and system design.
 
 ------------------------------------------------------------------------
-
-## My Role
-
-**Software Engineer -- Industrial Automation**
-
-I designed and developed two mission-critical integration services
-within the WCS layer.
-
-------------------------------------------------------------------------
-
+## APPLICATIONS
 <details open>
   <summary>
     <img src="https://img.shields.io/badge/01-WMS%20→%20RGV%20Command%20Dispatcher-00C2FF?style=for-the-badge" alt="Augmented Reality Exploration">
@@ -53,20 +48,28 @@ within the WCS layer.
 
 - A service layer exposing API endpoints to receive operational feedback from RGV equipment
 
-- Handles incoming machine-generated reports, including:
+  - Handles incoming machine-generated reports, including:
 
-  - Transport Status Reports
-  - Destination Change Requests
-  - Pass Reports
-  - Equipment Status Reports
-  - Equipment Error Reports
-  - System Error / Alert Reports
+    - Transport Status Reports
+    - Destination Change Requests
+    - Pass Reports
+    - Equipment Status Reports
+    - Equipment Error Reports
+    - System Error / Alert Reports
+
+  This service also updated shared memory structures to synchronize
+equipment state across the WCS ecosystem.
 
 </details>
 
-# WCS ↔ RGV Integration Flow
+------------------------------------------------------------------------
+## DIAGRAMS
+<details open>
+  <summary>
+    <img src="https://img.shields.io/badge/01-WCS%20↔%20RGV%20Integration%20Flow-00C2FF?style=for-the-badge" alt="WCS ↔ RGV Integration Flow">
+  </summary>
 
-This diagram shows the interaction between **RGV2WMS** and **WMS2RGV** in a Warehouse Control System.
+- This diagram shows the interaction between **RGV2WMS** and **WMS2RGV** in a Warehouse Control System.
 
 ```text
 
@@ -89,29 +92,20 @@ This diagram shows the interaction between **RGV2WMS** and **WMS2RGV** in a Ware
  +-------------------+                            +-----------------------+
 
 
-
-
 ```
-### ✅ RGV → WMS Telemetry Service
 
-A service layer exposing API endpoints to receive operational feedback
-from RGV equipment.
+</details>
 
-Handled incoming machine-generated reports such as:
 
--   Transport Status Reports\
--   Destination Change Requests\
--   Pass Reports\
--   Equipment Status Reports\
--   Equipment Error Reports\
--   System Error / Alert Reports
+<details open>
+  <summary>
+    <img src="https://img.shields.io/badge/02-High%20Level%20Architecture-00C2FF?style=for-the-badge" alt="High-Level Architecture">
+  </summary>
 
-This service also updated shared memory structures to synchronize
-equipment state across the WCS ecosystem.
+- A service layer exposing API endpoints to receive operational feedback from RGV equipment
 
-------------------------------------------------------------------------
+```text
 
-## High-Level Architecture
 
                     +------------------------------+
                     |   Warehouse Management       |
@@ -124,15 +118,15 @@ equipment state across the WCS ecosystem.
                     |            (WCS)             |
                     +--------------+---------------+
                                    |
-            ---------------------------------------------------
-            |        |         |         |          |        |
-            v        v         v         v          v        v
+                +---------------------------------------+
+                |        |         |         |          |        
+                v        v         v         v          v        
 
-       Scheduler   Crane      SCADA      Database   Other   WMS–RGV
-        Engine    Control     System     Services  Services Bridge
+            Scheduler  Crane      SCADA   Database   Other
+                      Control                       Services 
                                    |
                                    v
-                    +------------------------------+
+                    +------------------------------+                      Server 1
                     |        Shared Memory IPC     |
                     +--------------+---------------+
                                    |
@@ -141,105 +135,123 @@ equipment state across the WCS ecosystem.
                   v                                       v
 
        +------------------------+         +------------------------+
-       |   WMS → RGV            | <-----> |   RGV → WMS            |
+       |   WMS → RGV            |         |   RGV → WMS            |
        |   Command Service      |         |   Telemetry Service    |
        +-----------+------------+         +-----------+------------+
                    |                                      ^
                    | REST / HTTP APIs                     |
                    v                                      |
             +------------------------------------------------------+
-            |            Rail Guided Vehicles (RGVs)               |
+            |            Rail Guided Vehicles (RGVs)               |      Server 2
             |   Industrial PCs / Embedded Control Systems          |
             +------------------------------------------------------+
 
+
+```
+
+</details>
+
 ------------------------------------------------------------------------
 
-## System Characteristics
-
-### Distributed Service Architecture
-
-Multiple independent .NET console / worker applications operated
+## KEY FEATURES
+<details open>
+  <summary>
+    <img src="https://img.shields.io/badge/01-Distributed%20Service%20Architecture-00C2FF?style=for-the-badge" alt="Augmented Reality Exploration">
+  </summary>
+Multiple independent .NET console/worker applications operated
 concurrently on a central control server. Each application was
 responsible for a dedicated automation domain, including:
 
--   Fleet scheduling\
--   Crane control\
--   SCADA integration\
--   Database interaction\
--   Equipment and vehicle integration
+  -   Fleet scheduling
+  -   Crane control
+  -   SCADA integration
+  -   Database interaction
+  -   Equipment and vehicle integration
 
 This modular architecture improved fault isolation, maintainability, and
 overall system reliability.
+  
+</details>
 
-------------------------------------------------------------------------
-
-### Inter-Process Communication (IPC)
-
+<details open>
+  <summary>
+    <img src="https://img.shields.io/badge/02-Inter%20Process%20Communication-00C2FF?style=for-the-badge" alt="Augmented Reality Exploration">
+  </summary>
+  
 The system relied on **shared memory** as the primary IPC mechanism
 between time-critical services.
 
 **Why Shared Memory?**
 
--   Near-zero latency\
--   Deterministic execution behavior\
--   Suitable for real-time and industrial environments\
+-   Near-zero latency
+-   Deterministic execution behavior
+-   Suitable for real-time and industrial environments
 -   Eliminates network and serialization overhead
 
 This approach is commonly used in:
 
--   Robotics and automation systems\
--   High-frequency trading platforms\
--   Telecommunications infrastructure\
+-   Robotics and automation systems
+-   High-frequency trading platforms
+-   Telecommunications infrastructure
 -   Smart factory environments
+  
+</details>
 
-------------------------------------------------------------------------
-
-### Event-Driven Command Execution
+<details open>
+  <summary>
+    <img src="https://img.shields.io/badge/03-Event%20Driven%20Command%20Execution-00C2FF?style=for-the-badge" alt="Augmented Reality Exploration">
+  </summary>
 
 Instead of traditional request polling, command execution was driven by
 scheduler-updated memory states.
 
 Example logic:
-
+```text
     IF CMD = TRANSPORT AND GO = TRUE
         → Dispatch transport request to RGV
+```
 
 This event-driven approach ensured predictable, efficient, and timely
 machine orchestration.
+  
+</details>
 
-------------------------------------------------------------------------
-
-### State Machine--Based Control
+<details open>
+  <summary>
+    <img src="https://img.shields.io/badge/04-Distributed%20Service%20Architecture-00C2FF?style=for-the-badge" alt="Augmented Reality Exploration">
+  </summary>
 
 System behavior followed strict and deterministic state transitions to
 prevent unsafe or undefined operations.
 
 Example operational states:
 
--   READY\
--   EXECUTING\
--   COMPLETED\
+-   READY
+-   EXECUTING
+-   COMPLETED
 -   FAILED
 
 State-driven control models are essential in industrial automation
 systems where safety and reliability are non-negotiable.
+  
+</details>
 
 ------------------------------------------------------------------------
 
 ## Technology Stack
 
-**Backend** - .NET Console Applications / Worker Services\
+**Backend** - .NET Console Applications / Worker Services
 - RESTful API communication
 
-**Architecture** - Distributed Systems\
-- Event-Driven Design\
+**Architecture** - Distributed Systems
+- Event-Driven Design
 - State Machine--Based Execution
 
-**Communication** - Shared Memory IPC\
+**Communication** - Shared Memory IPC
 - Machine-to-System API Integration
 
-**Domain** - Warehouse Control Systems (WCS)\
-- Industrial Automation\
+**Domain** - Warehouse Control Systems (WCS)
+- Industrial Automation
 - Equipment Telemetry and Feedback
 
 ------------------------------------------------------------------------
@@ -266,19 +278,19 @@ Physical Equipment ↔ Control Services ↔ Scheduler
 
 Designing services capable of gracefully handling:
 
--   Equipment-level errors\
--   Communication failures\
+-   Equipment-level errors
+-   Communication failures
 -   Invalid or conflicting system states
 
 ------------------------------------------------------------------------
 
 ## Key Achievements
 
-✅ Developed mission-critical industrial automation services\
-✅ Enabled reliable, low-latency command exchange with RGV fleets\
-✅ Implemented shared-memory--driven IPC workflows\
-✅ Delivered production-grade distributed service architecture\
-✅ Contributed to a real-world smart factory / Industry 4.0 environment
+✅ Developed mission-critical industrial automation services<br>
+✅ Enabled reliable, low-latency command exchange with RGV fleets<br>
+✅ Implemented shared-memory--driven IPC workflows<br>
+✅ Delivered production-grade distributed service architecture<br>
+✅ Contributed to a real-world smart factory / Industry 4.0 environment<br>
 
 ------------------------------------------------------------------------
 
@@ -286,10 +298,10 @@ Designing services capable of gracefully handling:
 
 This project significantly strengthened my experience in:
 
--   Industrial software engineering\
--   Distributed and real-time system design\
--   Equipment and vehicle integration\
--   State-driven control logic\
+-   Industrial software engineering
+-   Distributed and real-time system design
+-   Equipment and vehicle integration
+-   State-driven control logic
 -   Failure-tolerant architecture
 
 It also provided hands-on exposure to large-scale automation systems
@@ -303,44 +315,3 @@ Specific implementation details, proprietary protocols, internal
 identifiers, and organizational information have been intentionally
 omitted to comply with confidentiality agreements.
 
-------------------------------------------------------------------------
-
-## (Optional Section --- Customize)
-
-### Scale of Deployment
-
-> Example: - Number of RGVs: \[ Fill \]\
-> - Average commands per hour: \[ Fill \]\
-> - Factory / warehouse size: \[ Fill \]
-
-------------------------------------------------------------------------
-
-### Tools / Libraries Used
-
-> Add notable tools, frameworks, or internal utilities.
-
--   \[ \]\
--   \[ \]\
--   \[ \]
-
-------------------------------------------------------------------------
-
-### Future Improvements (Architectural Perspective)
-
-If redesigned today, potential enhancements could include:
-
--   Message broker integration (Kafka / RabbitMQ)\
--   Containerized deployments\
--   Centralized observability and monitoring dashboards\
--   Automated failover and redundancy\
--   Digital twin--based simulation and testing
-
-------------------------------------------------------------------------
-
-## Author
-
-**\[Your Name\]**\
-Software Engineer -- Industrial Systems
-
-LinkedIn: \[ Add \]\
-Portfolio: \[ Add \]
