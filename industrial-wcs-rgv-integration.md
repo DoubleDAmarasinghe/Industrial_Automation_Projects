@@ -21,22 +21,23 @@ This portfolio highlights selected projects demonstrating my expertise in:
 - Game Development  
 - Cloud & System Architecture  
 
-Click any project below to view the detailed documentation.
-
 ---
 
 ## 📌 Featured Projects
+A curated selection of systems and applications demonstrating experience in industrial automation, backend engineering, and immersive mobile technologies. Each project highlights practical problem-solving, production-oriented architecture, and scalable design.
 
-| Project | Role | Tech Stack | Description |
-|--------|------|------------|--------------|
-| [WMS ↔ RGV Integration System](https://github.com/DoubleDAmarasinghe/Industrial_Automation_Projects/blob/main/WCS_RGV_Integration_README.md)  | Software Engineer | .NET, REST APIs, Shared Memory | Industrial transport control system enabling machine communication and real-time telemetry. |
-| 🚀 **Warehouse Management Mobile App** | Mobile Developer | .NET MAUI, APIs | Cross-platform mobile solution for warehouse operations and inventory workflows. |
-| 🌌 **Astronomical AR Education App** | AR Engineer | Unity, AR | Interactive augmented reality application for exploring planets and celestial bodies. |
-| 🤿 **Underwater VR Simulation** | VR Engineer | Unity, VR | Educational simulation allowing users to pilot a submersible and scan marine life. |
-| 🎮 **Rubik’s Cube AR Solver** | Unity Developer | Unity, AR | Mobile AR game with automated solving, tutorials, and interactive learning. |
-| 🧾 **Sales Management System** | Backend Developer | ASP.NET Core, SQL | End-to-end sales platform supporting invoicing, inventory tracking, and receipts. |
+👉 Click any project below to view the detailed documentation.
 
-👉 Click below to explore detailed project breakdowns.
+| Project | Domain | Role | Core Technologies | Overview |
+|--------|--------|------|------------------|-----------|
+| **[Warehouse Control System (WCS) – RGV Integration Layer](https://github.com/DoubleDAmarasinghe/Industrial_Automation_Projects/blob/main/WCS_RGV_Integration_README.md)** | Industrial Automation | Software Engineer | .NET, REST APIs, Shared Memory, IPC | Designed and implemented a machine integration layer enabling real-time communication between warehouse control systems and rail-guided vehicles, supporting transport commands, telemetry, and operational reliability. |
+| **[AR Product Simulator Application](https://github.com/DoubleDAmarasinghe/Mobile_Application_Development_Showcase/blob/main/ar-ai-based-simulator-showcase-application.md)** | Mobile Augmented Reality | AR Engineer | Unity, AR, Mobile Development | Developed an interactive product visualization platform allowing users to simulate and explore digital products within a real-world environment using augmented reality. |
+| **[Block AR 3×3×3 Rubik Solver](https://github.com/DoubleDAmarasinghe/Mobile_Application_Development_Showcase/blob/main/block-ar-3x3x3rubik-solver-mobile.md)** | Mobile AR Gaming | AR Engineer | Unity, AR | Engineered a mobile AR application that teaches cube-solving techniques through guided interactions, automated solving, and immersive gameplay mechanics. |
+| **[Stargaze AR Astronomical Learning Application](https://github.com/DoubleDAmarasinghe/Mobile_Application_Development_Showcase/blob/main/stargaze-ar-astronomical-learning-application.md)** | Educational Technology | AR Engineer | Unity, AR | Built an educational AR experience enabling users to explore celestial bodies interactively, improving engagement through spatial visualization and real-time information rendering. |
+| **[Volt Launcher Mobile](https://github.com/DoubleDAmarasinghe/Mobile_Application_Development_Showcase/blob/main/volt-launcher-game-management-application.md)** | Mobile Platform | Software Engineer | Unity, Mobile Architecture | Created a centralized mobile launcher designed to manage and streamline access to multiple gaming experiences within a unified ecosystem. |
+
+
+
 
 ---
 
