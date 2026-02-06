@@ -1,6 +1,5 @@
 # ⚙️ .NET Shared Memory IPC Demonstration
-
-## 📐 Architecture Overview
+![NOTE](https://img.shields.io/badge/01-ARCHITECTURE%20OVERVIEW-00C2FF?style=for-the-badge) <br>
 
 ``` mermaid
 flowchart LR
@@ -17,11 +16,9 @@ Communication (IPC)** using **memory-mapped files** in .NET.
 This project focuses on **architecture and technique**, showcasing how
 deterministic memory layouts enable **ultra-fast communication between
 processes** without relying on REST APIs, sockets, or message brokers.
-
+<img src="block-ar-3x3x3rubik-solver-mobile_1.jpg" alt="Landing Page" width="300" style="border: 2px solid #ddd; border-radius: 8px;">
 ------------------------------------------------------------------------
-
-## 🚀 Why Shared Memory?
-
+![NOTE](https://img.shields.io/badge/02-WHY%20SHARED%20MEMORY-00C2FF?style=for-the-badge) <br>
 Traditional IPC methods introduce latency due to serialization and
 networking layers.
 
@@ -41,32 +38,31 @@ systems.
 
 ------------------------------------------------------------------------
 
-## 🧠 Deterministic Memory Layout
-
+![NOTE](https://img.shields.io/badge/03-Deterministic%20Memory%20Layout-00C2FF?style=for-the-badge) <br>
 Below is a simplified representation of how the shared memory is
 organized.
 
-    Memory Map (SYS2025)
+    Memory Map (SYSMEM)
     Total Size: Fixed
 
     ┌──────────────────────────────────────┐
     │            MEMORY BLOCK 0            │
     ├──────────────────────────────────────┤
-    │ Offset 0   → Value_1 (Byte)         │
-    │ Offset 1   → Value_2 (Byte)         │
-    │ Offset 2   → Value_3 (Byte)         │
-    │ Offset 3   → Value_4 (Byte)         │
-    │ Offset 4   → Value_5 (Byte)         │
+    │ Offset 0   → Value_1 (Byte)          │
+    │ Offset 1   → Value_2 (Byte)          │
+    │ Offset 2   → Value_3 (Byte)          │
+    │ Offset 3   → Value_4 (Byte)          │
+    │ Offset 4   → Value_5 (Byte)          │
     └──────────────────────────────────────┘
 
     ┌──────────────────────────────────────┐
     │            MEMORY BLOCK 1            │
     ├──────────────────────────────────────┤
-    │ Offset 5   → Value_1                │
-    │ Offset 6   → Value_2                │
-    │ Offset 7   → Value_3                │
-    │ Offset 8   → Value_4                │
-    │ Offset 9   → Value_5                │
+    │ Offset 5   → Value_1                 │
+    │ Offset 6   → Value_2                 │
+    │ Offset 7   → Value_3                 │
+    │ Offset 8   → Value_4                 │
+    │ Offset 9   → Value_5                 │
     └──────────────────────────────────────┘
 
                     ...
@@ -77,12 +73,11 @@ organized.
 
 ------------------------------------------------------------------------
 
-## 🔎 Internal Structure Visualization
-
+![NOTE](https://img.shields.io/badge/04-Internal%20Structure%20Visualization-00C2FF?style=for-the-badge) <br>
 ``` mermaid
 flowchart TB
 
-    MM[Memory Map<br>SYS2025]
+    MM[Memory Map<br>SYSMEM]
 
     MM --> B0[Block 0<br>5 Bytes]
     MM --> B1[Block 1<br>5 Bytes]
@@ -99,7 +94,7 @@ flowchart TB
 
 ------------------------------------------------------------------------
 
-## ⚡ Write / Read Execution Flow
+![NOTE](https://img.shields.io/badge/05-Write%20/%20Read%20Execution%20Flow-00C2FF?style=for-the-badge) <br>
 
 ``` mermaid
 sequenceDiagram
@@ -118,8 +113,7 @@ sequenceDiagram
 
 ------------------------------------------------------------------------
 
-## 🏗️ Core Design Principles
-
+![NOTE](https://img.shields.io/badge/06-Core%20Design%20Principles-00C2FF?style=for-the-badge) <br>
 ### ✅ Structured Memory Modeling
 
 Memory regions are mapped into logical structures that behave like
@@ -163,8 +157,7 @@ Just deterministic memory access.
 
 ------------------------------------------------------------------------
 
-## 🎯 What This Project Demonstrates
-
+![NOTE](https://img.shields.io/badge/07-What%20This%20Project%20Demostrates-00C2FF?style=for-the-badge) <br>
 -   Designing deterministic memory layouts\
 -   Modeling shared memory as structured data\
 -   Offset-based read/write techniques\
@@ -175,8 +168,7 @@ Just deterministic memory access.
 
 ------------------------------------------------------------------------
 
-## 💡 Real-World Inspiration
-
+![NOTE](https://img.shields.io/badge/08-Real%20World%20Inspiration-00C2FF?style=for-the-badge) <br>
 This design pattern mirrors communication layers used in:
 
 -   Warehouse Control Systems (WCS)\
@@ -190,34 +182,33 @@ engineering concept.
 
 ------------------------------------------------------------------------
 
-## 🔐 Safety Considerations
-
+![NOTE](https://img.shields.io/badge/09-Safety%20Consideration-00C2FF?style=for-the-badge) <br>
 Production IPC systems must account for:
 
--   Memory collision prevention\
--   Fixed structure sizes\
--   Version compatibility\
--   Synchronization strategy\
+-   Memory collision prevention
+-   Fixed structure sizes
+-   Version compatibility
+-   Synchronization strategy
 -   Controlled write access
 
 This demo follows a **structured layout strategy** to minimize
 corruption risks and ensure predictable behavior.
 
+
 ------------------------------------------------------------------------
 
-## 👨‍💻 Who Is This For?
-
+![NOTE](https://img.shields.io/badge/10-Who%20Is%20This%20For-00C2FF?style=for-the-badge) <br>
 Engineers interested in:
 
--   Low-level programming\
--   Systems engineering\
--   Industrial automation\
--   High-performance backend design\
+-   Low-level programming
+-   Systems engineering
+-   Industrial automation
+-   High-performance backend design
 -   Memory-driven architectures
 
 ------------------------------------------------------------------------
 
-## 🔥 Key Takeaway
+![NOTE](https://img.shields.io/badge/11-Key%20Takeaway-00C2FF?style=for-the-badge) <br>
 
 > Shared memory is not just an IPC method ---\
 > it is a **systems engineering mindset** focused on speed, determinism,
