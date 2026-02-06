@@ -1,4 +1,4 @@
-# ⚙️ .NET Shared Memory IPC Demonstration
+# .NET Shared Memory IPC Demonstration
 ![NOTE](https://img.shields.io/badge/01-ARCHITECTURE%20OVERVIEW-00C2FF?style=for-the-badge) <br>
 
 ``` mermaid
@@ -10,14 +10,17 @@ flowchart LR
     style M fill:#2d3748,color:#fff,stroke:#4a5568
 ```
 
-A minimal, industrial-style demonstration of **Inter-Process
-Communication (IPC)** using **memory-mapped files** in .NET.
+>A minimal, industrial-style demonstration of **Inter-Process
+>Communication (IPC)** using **memory-mapped files** in .NET.
 
-This project focuses on **architecture and technique**, showcasing how
-deterministic memory layouts enable **ultra-fast communication between
-processes** without relying on REST APIs, sockets, or message brokers.
-<img src="block-ar-3x3x3rubik-solver-mobile_1.jpg" alt="Landing Page" width="300" style="border: 2px solid #ddd; border-radius: 8px;">
+>This project focuses on **architecture and technique**, showcasing how
+>deterministic memory layouts enable **ultra-fast communication between
+>processes** without relying on REST APIs, sockets, or message brokers.
+
 ------------------------------------------------------------------------
+
+<img src="inter_process_communication_2.gif" alt="Landing Page" width="800" style="border: 2px solid #ddd; border-radius: 8px;">
+
 ![NOTE](https://img.shields.io/badge/02-WHY%20SHARED%20MEMORY-00C2FF?style=for-the-badge) <br>
 Traditional IPC methods introduce latency due to serialization and
 networking layers.
@@ -74,23 +77,9 @@ organized.
 ------------------------------------------------------------------------
 
 ![NOTE](https://img.shields.io/badge/04-Internal%20Structure%20Visualization-00C2FF?style=for-the-badge) <br>
-``` mermaid
-flowchart TB
 
-    MM[Memory Map<br>SYSMEM]
+<img src="inter_process_communication_1.gif" alt="Landing Page" width="800" style="border: 2px solid #ddd; border-radius: 8px;">
 
-    MM --> B0[Block 0<br>5 Bytes]
-    MM --> B1[Block 1<br>5 Bytes]
-    MM --> B2[Block N...]
-
-    B0 --> V1[Value_1<br>Offset 0]
-    B0 --> V2[Value_2<br>Offset 1]
-    B0 --> V3[Value_3<br>Offset 2]
-    B0 --> V4[Value_4<br>Offset 3]
-    B0 --> V5[Value_5<br>Offset 4]
-
-    style MM fill:#1a202c,color:#fff
-```
 
 ------------------------------------------------------------------------
 
