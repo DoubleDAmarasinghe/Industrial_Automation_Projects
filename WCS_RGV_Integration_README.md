@@ -1,6 +1,6 @@
 # Warehouse Control System (WCS) - RGV Integration Layer
 
-<img alt="Role Badge" src="https://img.shields.io/badge/ROLE-Software%20Engineer%20%20(Industrial%20Automation)-f22481"> <br>
+<img alt="Role Badge" src="https://img.shields.io/badge/ROLE-Software%20Engineer-f22481"> <br>
 ![NOTE](https://img.shields.io/badge/PROJECT-INTRODUCTION-00C2FF?style=for-the-badge)
 
 
