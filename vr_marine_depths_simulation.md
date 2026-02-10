@@ -143,7 +143,7 @@
     <img src="https://img.shields.io/badge/07-VR%20World-00C2FF?style=for-the-badge" alt="VR World">
   </summary>
 
-  <img src="vr_marine_depths_simulation_2.png.jpg" alt="AR World" width="800" style="border: 2px solid #ddd; border-radius: 8px;">
+  <img src="vr_marine_depths_simulation_2.png" alt="AR World" width="800" style="border: 2px solid #ddd; border-radius: 8px;">
 </details>
 
 <details open>
