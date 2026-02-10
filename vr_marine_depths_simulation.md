@@ -190,12 +190,17 @@
 
 ## Project Summary
 
-| **Category**       | **Details**                           |
-|--------------------|---------------------------------------|
-| **Devices**        | Android ARCore supported & Non-AR devices |
-| **Languages**      | C#                                     |
-| **API**            | Conva AI API                                |
-| **Version Control** | GitHub                                 |
-| **Deployment**     | Unity                                   |
+| **Category**        | **Details**                                      |
+|---------------------|--------------------------------------------------|
+| **Platform**        | Virtual Reality (Standalone)                      |
+| **Target Device**   | Meta Oculus Quest 2                               |
+| **Interaction**     | Hand Tracking, Gesture-Based Controls, Spatial UI |
+| **Engine**         | Unity (Real-Time 3D)                              |
+| **Language**       | C#                                               |
+| **XR Frameworks**  | OpenXR, Oculus Integration                       |
+| **Graphics**       | Optimized Real-Time Rendering, Immersive Underwater Environments |
+| **Version Control**| GitHub                                           |
+| **Deployment**     | Android (Quest Platform)                         |
+
 
 
